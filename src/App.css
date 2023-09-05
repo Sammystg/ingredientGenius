@@ -43,7 +43,8 @@ ul {
 /* APP COMPONENT CSS */
 .appTitle {
   font-size: 4rem;
-  padding-top: 2rem;
+  padding-top: 6rem;
+  color: #66bb79;
 }
 
 .formTitle {
@@ -90,3 +91,73 @@ ul {
   font-size: 1.3rem;
   margin: 0;
 }
+
+
+
+@media (max-width: 1200px) {
+  .recipes {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 100%
+  }
+}
+
+@media (max-width: 745px) {
+  .appTitle {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 610px) {
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 558px) {
+  .appTitle {
+    font-size: 2.5rem;
+  }
+
+}
+
+@media (max-width: 450px) {
+  .app {
+    padding: 0;
+  }
+
+  .wrapper {
+    width: 95%;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 362px) {
+  .formTitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 357px) {
+  .searchInput,
+  .searchBtn {
+    width: 100%;
+  }
+
+  .searchBtn {
+    margin-top: .2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
