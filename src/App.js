@@ -16,7 +16,7 @@ const App = () => {
 
   const getIngredients = async () => {
     const response = await fetch
-    ('http://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}');
+    (`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`);
     const data = await response.json();
     setRecipes(data.hits);
   };
@@ -35,7 +35,7 @@ const App = () => {
     <div className="app">
       <div className="wrapper">
         <form className="searchForm" onSubmit={getRecipe} >
-          <label for="searchInput" className="sr-only">Search</label>
+          <label htmlFor="searchInput" className="sr-only">Search</label>
           <input className="searchBar" id="searchInput" type="search" value={search}
           onChange={updateSearch} />
           <button className="searchButton" type="submit" >
@@ -43,17 +43,18 @@ const App = () => {
           </button>
         </form>
         <div className="recipes">
-          {recipes.map(recipe => (
+          {recipes.map((recipe) => (
           <Recipe
             key={recipe.recipe.label}
+            title={recipe.recipe.label}
             calories={recipe.recipe.calories}
-            image={recipe.image}
+            image={recipe.recipe.image}
             ingredients={recipe.recipe.ingredients}
           />
           ))}
         </div>
       </div>
-      <footer>
+      <footer className="footer">
         <p>Created by Sammy | at Juno College</p>
         
       </footer>
