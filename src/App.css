@@ -29,7 +29,7 @@ h3 {
 }
 
 .app {
-  background-color: #eff4ec;
+  background-color: #eaebf0;
   text-align: center;
 }
 
@@ -62,16 +62,16 @@ ul {
   border: none;
   cursor: pointer;
   margin-left: 0.1rem;
-  background-color: #afc7a1;
+  background-color:#afc7a1;
   padding: 8px 15px;
   transition: background-color 0.3s, color 0.3s;
-  color: #252625;
+  color: black;
   border-radius: 4px;
 }
 
 .searchBtn:hover, 
 .searchBtn:focus {
-  background-color: #80a249;
+  background-color: #66bb79;
 }
 
 .recipes {
@@ -82,7 +82,7 @@ ul {
 
 .footer {
   padding: 25px;
-  background-color: #ff9f29;
+  background-color: #66bb79;
   color: white;
 }
 

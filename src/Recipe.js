@@ -1,11 +1,8 @@
 import React from 'react';
 import style from './recipe.module.css';
 
-const Recipe = ({ title, calories, image, ingredients }) => {
+const Recipe = ({ calories, image, ingredients, title }) => {
   const roundedCalories = Math.floor(calories);
-
-  // Log the image URL
-  console.log('Image URL:', image);
 
   return (
     <div className={style.recipe}>
