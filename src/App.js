@@ -32,29 +32,33 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <form className="searchForm" onSubmit={getRecipe} >
-        <label for="searchInput" className="sr-only">Search</label>
-        <input className="searchBar" id="searchInput" type="search" value={search}
-        onChange={updateSearch} />
-        <button className="bearchButton" type="submit" >
-          Search
-        </button>
-      </form>
-      <div className="recipes">
-        {recipes.map(recipe => (
-        <Recipe
-          key={recipe.recipe.label}
-          calories={recipe.recipe.calories}
-          image={recipe.image}
-          ingredients={recipe.recipe.ingredients}
-        />
-
-        ))}
+    <div className="app">
+      <div className="wrapper">
+        <form className="searchForm" onSubmit={getRecipe} >
+          <label for="searchInput" className="sr-only">Search</label>
+          <input className="searchBar" id="searchInput" type="search" value={search}
+          onChange={updateSearch} />
+          <button className="searchButton" type="submit" >
+            Search
+          </button>
+        </form>
+        <div className="recipes">
+          {recipes.map(recipe => (
+          <Recipe
+            key={recipe.recipe.label}
+            calories={recipe.recipe.calories}
+            image={recipe.image}
+            ingredients={recipe.recipe.ingredients}
+          />
+          ))}
+        </div>
       </div>
+      <footer>
+        <p>Created by Sammy | at Juno College</p>
+        
+      </footer>
     </div>
   );
 }
-
 
 export default App;
