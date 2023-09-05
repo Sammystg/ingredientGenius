@@ -19,6 +19,7 @@ h2,
 h3 {
   margin: 0;
   padding: 0;
+  color: #252625;
 }
 
 .wrapper {
@@ -27,9 +28,60 @@ h3 {
   width: 90%;
 }
 
-
 .app {
-  background-color: #64c5d7;
+  background-color: #eff4ec;
   text-align: center;
 }
 
+.appTitle {
+  font-size: 4rem;
+  padding-top: 2rem;
+}
+
+.formTitle {
+  margin: 2rem 0 1rem 0;
+}
+
+.inputForm {
+  margin-bottom: 4.5rem;
+}
+
+.searchInput {
+  padding: 6px 0;
+}
+
+.searchBtn {
+  border: none;
+  cursor: pointer;
+  margin-left: 0.1rem;
+  background-color: #afc7a1;
+  padding: 8px 15px;
+  transition: background-color 0.3s, color 0.3s;
+  color: #252625;
+  border-radius: 4px;
+}
+
+.searchBtn:hover, 
+.searchBtn:focus {
+  background-color: #80a249;
+}
+
+.recipes {
+  display: grid;
+  grid-gap: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.footer {
+  padding: 25px;
+  background-color: #ff9f29;
+  color: white;
+}
+
+.footer p {
+  font-size: 1.3rem;
+  margin: 0;
+}

@@ -34,13 +34,13 @@ const App = () => {
   return (
     <div className="app">
       <div className="wrapper">
-        <h1>Ingredient Genius</h1>
-        <h2>Unleash your inner chef!</h2>
-        <form className="searchForm" onSubmit={getRecipe} >
+        <h1 className="appTitle">Ingredient Genius</h1>
+        <h2 className="formTitle">Unleash your inner chef!</h2>
+        <form className="inputForm" onSubmit={getRecipe} >
           <label htmlFor="searchInput" className="sr-only">Search</label>
-          <input className="searchBar" id="searchInput" type="search" value={search}
+          <input className="searchInput" id="searchInput" type="search" value={search}
           onChange={updateSearch} />
-          <button className="searchButton" type="submit" >
+          <button className="searchBtn" type="submit" >
             Search
           </button>
         </form>
