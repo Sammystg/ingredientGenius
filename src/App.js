@@ -34,6 +34,8 @@ const App = () => {
   return (
     <div className="app">
       <div className="wrapper">
+        <h1>Ingredient Genius</h1>
+        <h2>Unleash your inner chef!</h2>
         <form className="searchForm" onSubmit={getRecipe} >
           <label htmlFor="searchInput" className="sr-only">Search</label>
           <input className="searchBar" id="searchInput" type="search" value={search}
