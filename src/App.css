@@ -33,6 +33,14 @@ h3 {
   text-align: center;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* END OF GENERAL STYLES */
+
+
+/* APP COMPONENT CSS */
 .appTitle {
   font-size: 4rem;
   padding-top: 2rem;
@@ -68,11 +76,8 @@ h3 {
 
 .recipes {
   display: grid;
-  grid-gap: 20px;
-}
-
-li {
-  list-style-type: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 18px;
 }
 
 .footer {
