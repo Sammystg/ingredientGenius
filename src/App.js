@@ -8,36 +8,33 @@ const App = () => {
 
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("broccoli");
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchRandomRecipe = async () => {
-      try {
-        const randomSearchTerms = ["chicken", "pasta", "salad", "pizza"]; 
-        const randomIndex = Math.floor(Math.random() * randomSearchTerms.length);
-        const randomQuery = randomSearchTerms[randomIndex];
+    if (query.trim() !== "") {
+      getIngredients();
+    }
+  }, [query]);
 
-        const response = await fetch(
-          `https://api.edamam.com/search?q=${randomQuery}&app_id=${APP_ID}&app_key=${API_KEY}`
-        );
+  const getIngredients = async () => {
+    try {
+      const response = await fetch(
+        `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`
+      );
 
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const data = await response.json();
-        setRecipes(data.hits);
-        setQuery(randomQuery);
-        setError(null); 
-      } catch (error) {
-        setError("An error occurred while fetching data. Please try again later.");
-        setRecipes([]); 
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
       }
-    };
 
-    fetchRandomRecipe();
-  }, []);
+      const data = await response.json();
+      setRecipes(data.hits);
+      setError(null); // Clear any previous errors
+    } catch (error) {
+      setError("An error occurred while fetching data. Please try again later.");
+      setRecipes([]); // Clear recipes on error
+    }
+  };
 
   const updateSearch = (e) => {
     setSearch(e.target.value);
@@ -50,6 +47,7 @@ const App = () => {
     if (trimmedQuery === "") {
       setError("Please enter a valid search query.");
     } else if (/^[a-zA-Z0-9\s]+$/.test(trimmedQuery)) {
+      // Check for special characters
       setQuery(trimmedQuery);
       setError(null);
     } else {
@@ -60,7 +58,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="wrapper">
-        <h1 className="appTitle">Ingredient Genius</h1>
+        <h1 className="appTitle">Ingredient Genius</h1>        
         <form className="inputForm" onSubmit={getRecipe}>
           <label htmlFor="searchInput" className="sr-only">
             Search
